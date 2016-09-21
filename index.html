@@ -26,11 +26,12 @@
     // device APIs are available
     //
     function onDeviceReady() {
-         var ref = window.open('http://apache.org', '_blank', 'location=yes');
-         ref.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
-         ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
-         ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
-         ref.addEventListener('exit', function(event) { alert(event.type); });
+		var ventana_ancho = $(window).width();
+		alert(ventana_ancho);
+		var ventana_alto = $(window).height();
+		$("#cuerpo").html('<object data="http://www.power903.com.ar/" width='+ventana_ancho+'	height="100%" style="overflow:auto;border:0"/>');
+         var ref = window.open('http://184.107.187.146:8032/fenix951', '_blank', 'location=yes');
+        
     }
 
     </script>
@@ -284,6 +285,7 @@ function loadURL(url){
 		</div>
 	</div>
 </div>
+<div id="cuerpo"></div>
 	</div><!-- /content -->
 
 			<div data-role="footer">
