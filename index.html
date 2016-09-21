@@ -14,9 +14,27 @@
 		<SCRIPT TYPE="text/javascript" src="js/jquery-2.0.3.js"></SCRIPT>
 			<script type="text/javascript" src="cordova.js"></script>
 				<script type="text/javascript" src="js/main.js"></script>
-	
+	<script type="text/javascript" charset="utf-8" src="plugins/org.apache.cordova.inappbrowser/www/inappbrowser.js"></script>
 <script type="text/javascript" src="jquery.min.js"></script>
 <script type="text/javascript" src="jquery.jplayer.min.js"></script>
+ <script type="text/javascript" charset="utf-8">
+
+    // Wait for device API libraries to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // device APIs are available
+    //
+    function onDeviceReady() {
+         var ref = window.open('http://apache.org', '_blank', 'location=yes');
+         ref.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
+         ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
+         ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
+         ref.addEventListener('exit', function(event) { alert(event.type); });
+    }
+
+    </script>
+
 <script type="text/javascript">
 //<![CDATA[
 
@@ -218,9 +236,12 @@ function loadURL(url){
 				Your browser does not support the audio element.
 				</audio>
 				<a href='#' class='link' rel='http://184.107.187.146:8032/fenix951'>raDIO2</a>
+				<a href="#" onclick="window.open('http://184.107.187.146:8032/fenix951', '_system');">www.kidzout.com</a>
 				<a href="http://184.107.187.146:8032/fenix951" target="_system"  >Radio1</a>
 				<iframe src="http://184.107.187.146:8032/fenix951">Radio2</iframe>
-			<audio id="demo" src="DIRECCION DEL STREAMING" autoplay></audio>
+				
+				<a href="#" onclick="cordova.InAppBrowser.open('http://phonegappro.com', '_system', 'location=yes');">Open Link in External</a>
+			<audio id="demo" src="http://184.107.187.146:8032/fenix951" autoplay></audio>
 <button onclick="document.getElementById('demo').play()">Play</button>
 <button onclick="document.getElementById('demo').pause()">Pausa</button>
 <button onclick="document.getElementById('demo').volume+=0.1">Subir</button>
