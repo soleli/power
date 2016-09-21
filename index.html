@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+                          "http://www.w3.org/TR/html4/strict.dtd">
+    <html>
+      <head>
+        <title>Media Example</title>
+
+     
+		<link rel="stylesheet" type="text/css" href="jquery.mobile/jquery.mobile-1.4.5.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="jquery.mobile/icon-pack-custom.css">
+	
+		<SCRIPT TYPE="text/javascript" src="jquery.mobile/jquery-1.7.2.min"></SCRIPT>
+		<SCRIPT TYPE="text/javascript" src="jquery.mobile/jquery.mobile-1.4.5.js"></SCRIPT>
+		<SCRIPT TYPE="text/javascript" src="js/phonegap-1.4.1.js"></SCRIPT>
+		<SCRIPT TYPE="text/javascript" src="js/jquery-2.0.3.js"></SCRIPT>
+			<script type="text/javascript" src="cordova.js"></script>
+				<script type="text/javascript" src="js/main.js"></script>
+				<script type="text/javascript" src="js/StreamingMedia.js"></script>
+       <script type="text/javascript" >
+	    
+  var audioUrl = "http://184.107.187.146:8032/fenix951";
+
+  // Play an audio file (not recommended, since the screen will be plain black)
+  window.plugins.streamingMedia.playAudio(audioUrl);
+
+  // Play an audio file with options (all options optional)
+  var options = {
+    bgColor: "#FFFFFF",
+    bgImage: "<SWEET_BACKGROUND_IMAGE>",
+    bgImageScale: "fit", // other valid values: "stretch"
+    initFullscreen: false, // true(default)/false iOS only
+    successCallback: function() {
+      console.log("Player closed without error.");
+    },
+    errorCallback: function(errMsg) {
+      console.log("Error! " + errMsg);
+    }
+  };
+  window.plugins.streamingMedia.playAudio(audioUrl, options);
+
+  // Stop current audio
+  window.plugins.streamingMedia.stopAudio();
+
+  // Pause current audio (iOS only)
+  window.plugins.streamingMedia.pauseAudio();
+
+  // Resume current audio (iOS only)
+  window.plugins.streamingMedia.resumeAudio();  
+	   
+	   </script>
+      </head>
+      <body>
+		<div data-role="page" data-theme="a" data-content-theme="a">
+
+			<div data-role="header" >
+				<div class="row">
+				<div class="col-xs-9 text-center"><h1>POWER HIT</h1></div>
+				<div class="col-xs-2"><span class="icon-switch"></span></div>
+				</div>
+				<div class="row">
+				<a href="http://184.107.187.146:8032/fenix951"><div class="col-xs-4 text-center box-facebook"><span class="icon-facebook"></span></div></a>
+				<div class="col-xs-4 text-center box-whatsapp"><span class="icon-whatsapp"></span></div>
+				<div class="col-xs-4 text-center box-web"><span class="icon-earth"></span></div>
+		</div>
+			</div><!-- /header -->
+
+			<div data-role="content">	
+			<a   href="#" onclick="window.plugins.streamingMedia.playAudio(audioUrl, options);" ><span id="radio" class=" glyphicon glyphicon-pause"></span></a></div>
+				<audio controls="" style=" width: 100%;">
+				<source src="http://184.107.187.146:8032/fenix951" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio>
+				<audio controls="" style=" width: 100%;">
+				<source src="Kalimba.mp3" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio>
+				<a href="http://184.107.187.146:8032/fenix951" target="_system"  >Radio1</a>
+				<iframe src="http://184.107.187.146:8032/fenix951">Radio2</iframe>
+			
+			</div><!-- /content -->
+
+			<div data-role="footer">
+				<h4>Page Footer</h4>
+			</div><!-- /footer -->
+		</div><!-- /page -->
+	  	
+      </body>
+    </html>

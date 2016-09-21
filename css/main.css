@@ -1,0 +1,44 @@
+.ui-header {
+       background: #ef7100 !important;
+    color: white !important;
+}
+
+.box-facebook{
+    background: #0909a7;}
+.box-whatsapp{
+background: #0ab90a;}
+.box-web{
+    background: #00ceff;
+}
+/* --------------------------Iconos--------------------*/
+@font-face{
+	font-family:iconos;
+	src:url(../fonts/icomoon.ttf) format("truetype");
+} 
+.icon-switch:before {
+    content: "\e9c9";
+    font-family: iconos;
+    font-size: 30px;
+      position: absolute;
+    padding: 10px;
+    color: white;
+}
+.icon-facebook:before { 
+	content: "\e908";
+	font-family:iconos;
+    font-size:30px;
+	color: white;
+}
+
+.icon-whatsapp:before {
+	font-family:iconos;
+  content: "\ea97";
+  font-size:30px;
+      color: white;
+}
+.icon-earth:before {
+	font-family:iconos;
+  content: "\e9da";
+    font-size:30px;
+	    color: white;
+}
