@@ -1,7 +1,11 @@
 .row{
 margin:0px !important;
 }
-
+p{
+color: white;
+    text-shadow: none;
+   
+}
 .ui-header {
        background: #ef7100 !important;
     color: white !important;
@@ -53,3 +57,17 @@ background: #0ab90a;}
       font-size:30px;
 	    color: white;
 }
+.glyphicon-play:before {
+    content: "\e072";
+    padding: 0px;
+    font-size: 50px;
+    color: white;
+    border-radius: 70px;
+}
+
+
+
+.ui-page-theme-a .ui-btn, html .ui-bar-a .ui-btn, html .ui-body-a .ui-btn, html body .ui-group-theme-a .ui-btn, html head + body .ui-btn.ui-btn-a, .ui-page-theme-a .ui-btn:visited, html .ui-bar-a .ui-btn:visited, html .ui-body-a .ui-btn:visited, html body .ui-group-theme-a .ui-btn:visited, html head + body .ui-btn.ui-btn-a:visited {
+    color: white !important;
+    background: rgba(76, 78, 241, 0.23) !important;
+    text-shadow: none !important;}
