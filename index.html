@@ -4,11 +4,13 @@
       <head>
         <title>Media Example</title>
 
-     	<link href="css/jplayer.blue.monday.min.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="jquery.mobile/jquery.mobile-1.4.5.css">
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="jquery.mobile/icon-pack-custom.css">
 	
 		<SCRIPT TYPE="text/javascript" src="jquery.mobile/jquery-1.7.2.min"></SCRIPT>
+
 		<SCRIPT TYPE="text/javascript" src="jquery.mobile/jquery.mobile-1.4.5.js"></SCRIPT>
 		<SCRIPT TYPE="text/javascript" src="js/phonegap-1.4.1.js"></SCRIPT>
 		<SCRIPT TYPE="text/javascript" src="js/jquery-2.0.3.js"></SCRIPT>
@@ -22,9 +24,18 @@
  
 $( document ).ready(function() {
 var ventana_ancho = $(window).width();
+var alto_header = $('#header').height();
 	var ventana_alto = $(window).height();
-	$("#cuerpo").html('<object data="http://www.power903.com.ar/" width='+ventana_ancho+'	height='+ventana_alto+' style="overflow:auto;border:0"/>');
+	$("#cuerpo").html('<object data="http://www.power903.com.ar/" width='+ventana_ancho+'	height='+ventana_alto+' style="margin-top:-'+alto_header*5+'px;overflow:auto;border:0"/><object data="http://www.power903fm.com.ar/radio/" width='+ventana_ancho+'	height="auto" style="overflow:auto;border:0"/>');
+	
 })
+function programacion(){
+var ventana_ancho = $(window).width();
+	var ventana_alto = $(window).height();
+	$("#cuerpo").html('<object data="http://www.power903.com.ar/Programacion" width='+ventana_ancho+'	height='+ventana_alto+' style="overflow:auto;border:0"/><object data="http://www.power903fm.com.ar/radio/" width='+ventana_ancho+'	height="auto" style="overflow:auto;border:0"/>');
+	
+
+}
     </script>
 
 
@@ -32,26 +43,44 @@ var ventana_ancho = $(window).width();
       <body>
 		<div data-role="page" data-theme="a" data-content-theme="a">
 
-			<div data-role="header" >
+			<div id="header" data-role="header" >
+				<div  data-role="panel" data-display="overlay" data-position="left" id="panel1">
+					<div data-role="header" class="ui-b" data-theme="b"> <h1 >Menu</h1>
+						<a class="ui-btn-left" href="#demo-links" data-rel="close" data-icon="delete" data-role="button" data-iconpos="notext"></a>
+					</div>
+					<div data-role="content">
+						<ul data-role="listview" style="margin:0px"> 
+							<li> <a onclick="programacion()" data-transition='flip' href="#"  > Programaci&oacutecn</a></li>
+							<li> <a onclick="noticias('2')" data-transition='flip' href="#todas"> Top Ten</a></li>
+							<li> <a onclick="noticias('3')" data-transition='flip' href="#todas"  > Interior</a></li>
+							<li> <a onclick="noticias('4')" data-transition='flip' href="#todas"  > Nacionales</a></li>
+							<li> <a onclick="noticias('5')" data-transition='flip' href="#todas"  > Internacionales</a></li>
+							<li> <a onclick="noticias('6')" data-transition='flip' href="#todas"> Deportes</a></li>
+							<li> <a onclick="noticias('7')"  data-transition='flip' href="#todas"> Espet&aacuteculos </a></li>
+							<li> <a href="#contacto"  data-transition='flip' > Contacto</a></li>
+						</ul>
+							
+					</div>
+					
+				</div><!--fin panel-->
 				<div class="row">
+				<div class="col-xs-2"><a href="#panel1" id="butonham" data-role="button"  data-theme="b"><span class="glyphicon glyphicon-th"></span></a></div>
 				<div class="col-xs-9 text-center"><h1>POWER HIT</h1></div>
-				<div class="col-xs-2"><span class="icon-switch"></span></div>
+				
 				</div>
 				<div class="row">
-				<a href="http://184.107.187.146:8032/fenix951"><div class="col-xs-3 text-center box-facebook"><span class="icon-facebook"></span></div></a>
-				<div class="col-xs-3 text-center box-whatsapp"><span class="icon-whatsapp"></span></div>
-				<div class="col-xs-3 text-center box-web"><span class="icon-earth"></span></div>
-				<div class="col-xs-3 text-center box-web"><a href="#" onclick="cordova.InAppBrowser.open('http://184.107.187.146:8032/fenix951', '_system', 'location=yes');"><span class="icon-earth"></span>Radio</a></div>
-		</div>
+					<a href="http://184.107.187.146:8032/fenix951"><div class="col-xs-4 text-center box-facebook"><span class="icon-facebook"></span></div></a>
+					<div class="col-xs-4 text-center box-whatsapp"><span class="icon-whatsapp"></span></div>
+					<div class="col-xs-4 text-center box-web"><a href="#" onclick="cordova.InAppBrowser.open('http://184.107.187.146:8032/fenix951', '_system', 'location=yes');"><span class="glyphicon glyphicon-headphones"></span></a></div>
+				</div>
 			</div><!-- /header -->
 
 		<div data-role="content">	
+
 <div id="cuerpo"></div>
 	</div><!-- /content -->
 
-			<div data-role="footer">
-				<h4>Page Footer</h4>
-			</div><!-- /footer -->
+			
 		</div><!-- /page -->
       </body>
     </html>

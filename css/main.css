@@ -1,3 +1,7 @@
+.row{
+margin:0px !important;
+}
+
 .ui-header {
        background: #ef7100 !important;
     color: white !important;
@@ -9,6 +13,7 @@
 background: #0ab90a;}
 .box-web{
     background: #00ceff;
+	    padding: 3px;
 }
 /* --------------------------Iconos--------------------*/
 @font-face{
@@ -40,5 +45,11 @@ background: #0ab90a;}
 	font-family:iconos;
   content: "\e9da";
     font-size:30px;
+	    color: white;
+}
+
+.glyphicon-headphones:before {
+    content: "\e035";
+      font-size:30px;
 	    color: white;
 }
