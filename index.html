@@ -26,10 +26,10 @@ $( document ).ready(function() {
 var ventana_ancho = $(window).width();
 var alto_header = $('#header').height();
 	var ventana_alto = $(window).height();
-	margin=alto_header*5;
+	margin=alto_header*3;
 	height=ventana_alto+margin;
 	$("#cuerpo2").html('<object data="http://www.power903.com.ar/" width='+ventana_ancho+'	height='+height+' style="margin-top:-'+margin+'px;overflow:auto;border:0"/>');
-	
+		$("#panel").css("height",height);
 })
 function programacion(){
 	var ventana_ancho = $(window).width();
@@ -37,7 +37,8 @@ function programacion(){
 	var ventana_alto = $(window).height();
 	margin=alto_header*5;
 	height=ventana_alto+margin;
-	$("#cuerpo").html('<object data="http://www.power903.com.ar/Programacion" width='+ventana_ancho+'	height='+height+' style="margin-top:-'+margin+'px;overflow:auto;border:0"/>');
+	$("#programa").html("");
+	$("#cuerpo2").html('<object data="http://www.power903.com.ar/Programacion" width='+ventana_ancho+'	height='+height+' style="margin-top:-'+margin+'px;overflow:auto;border:0"/>');
 	}
 function topten(){
 	var ventana_ancho = $(window).width();
@@ -45,6 +46,7 @@ function topten(){
 	var ventana_alto = $(window).height();
 	margin=alto_header*5;
 	height=ventana_alto+margin;
+	$("#programa").html("");
 	$("#cuerpo").html('<object data="http://www.power903.com.ar/topten" width='+ventana_ancho+'	height='+height+' style="margin-top:-'+margin+'px;overflow:auto;border:0"/>');
 	}
 function videos(){
@@ -75,9 +77,9 @@ function videos(){
 				<div data-role="header" class="ui-b" data-theme="b"> <h1 >Menu</h1>
 						<a class="ui-btn-left" href="#demo-links" data-rel="close" data-icon="delete" data-role="button" data-iconpos="notext"></a>
 					</div>
-					<div data-role="content"  style="background: rgba(0, 4, 243, 0.31);">
+					<div data-role="content" id="panel" style="background: rgba(0, 4, 243, 0.31);">
 						<ul data-role="listview" style="margin:0px"> 
-							<li> <a onclick="programacion()" data-transition='flip' href="#"  > Programaci&oacutecn</a></li>
+							<li> <a onclick="programacion()" data-transition='flip' href="#"  > Programaci&oacuten</a></li>
 							<li> <a onclick="topten()" data-transition='flip' href="#todas"> Top Ten</a></li>
 							<li> <a onclick="videos()" data-transition='flip' href="#todas"  > Videos</a></li>
 							<li> <a onclick="contacto()" data-transition='flip' href="#todas"  > Contacto</a></li>
@@ -103,7 +105,14 @@ function videos(){
 <div id="programa">
 
 <img src="chica.png" class="img-responsive" style="   height: auto; width:100%;   position: relative;  ">
-<div style="   margin-top: -200px;    position: absolute;">
+<div style="top: -300px;position: relative;">
+<div style="
+    float: right;
+    padding: 0px 5px;
+    background: #bd1026;
+    border-left: 2px #fff9f9 solid;
+    border-radius: 5px;
+"><P>AHORA</p> </div>
 <div class="text-center" style="    padding-top: 80px;"><a href="#" onclick="cordova.InAppBrowser.open('http://200.58.118.108:8038/stream', '_system', 'location=yes');"><span class="glyphicon glyphicon-play"></span></a></div>
 	<h2>Super 15 Latino</h2>
 	<p>de 14hs a 17hs</p>

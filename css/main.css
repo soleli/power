@@ -6,8 +6,13 @@ color: white;
     text-shadow: none;
    
 }
+h2 {
+    font-size: 30px;
+    color: white;
+    text-shadow:2px 2px 2px black;
+}
 .ui-header {
-       background: #ef7100 !important;
+       background: #2b0ad6 !important;
     color: white !important;
 }
 
@@ -59,15 +64,18 @@ background: #0ab90a;}
 }
 .glyphicon-play:before {
     content: "\e072";
-    padding: 0px;
     font-size: 50px;
     color: white;
     border-radius: 70px;
+    background: #bd1026;
+    padding: 10px 15px;
 }
 
 
 
 .ui-page-theme-a .ui-btn, html .ui-bar-a .ui-btn, html .ui-body-a .ui-btn, html body .ui-group-theme-a .ui-btn, html head + body .ui-btn.ui-btn-a, .ui-page-theme-a .ui-btn:visited, html .ui-bar-a .ui-btn:visited, html .ui-body-a .ui-btn:visited, html body .ui-group-theme-a .ui-btn:visited, html head + body .ui-btn.ui-btn-a:visited {
     color: white !important;
-    background: rgba(76, 78, 241, 0.23) !important;
-    text-shadow: none !important;}
+       background: rgba(43, 10, 214, 0.58) !important;
+    text-shadow: none !important;
+    font-size: 20px
+	}
